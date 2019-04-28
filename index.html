@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atividade</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="estilo.css">
+    <script src="parcelador.js"></script>
+    <script src="calculadora.js"></script>
+    <script src="sorteador.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    
+    <div class="container-fluid"> 
+        <div class="row">
+            <div class="col">
+                <div class="icon text-center"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container navtabs">
+        <ul class="nav nav-tabs nav-justified" role="tablist"> 
+            <li class="nav-item nav-parcelador">
+                <a class="nav-link parc active" data-toggle="tab" href="#parcelador" role="tab">Parcelador</a>
+            </li>
+            <li class="nav-item nav-calculadora">
+                <a class="nav-link cal" data-toggle="tab" href="#calculadora" role="tab">Calculadora</a>
+            </li>
+            <li class="nav-item nav-sorteador">
+                <a class="nav-link sor" data-toggle="tab" href="#sorteador" role="tab">Sorteador</a>
+            </li>
+             <li class="nav-item nav-about">
+                <a class="nav-link about" data-toggle="tab" href="#about" role="tab">About</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div id="parcelador" class="container tab-pane active">
+            <div class="formulario">
+                <form>
+                    <div class="form-group">
+                        <label for="val">Valor:</label>
+                        <input id="val" class="form-control" type="text">
+    
+                        <label for="parcela">Numero de Parcelas: </label>
+                        <input id="parcela" class="form-control" type="text">
+    
+                        <button id="calc_parcelas" class="form-control btn btn-success" type="submit">Calcular Parcelas</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tabela container-fluid thead-ligth text-center">                
+                <table class="table">
+                    <thead id="thead-info" class="thead-success"></thead>
+                    <tbody id="tbody-info"></tbody>
+                </table>
+                <div class="resultado"></div>
+            </div>
+
+            <div class="tabela container-fluid thead-ligth text-center">                
+                <table class="table">
+                    <thead id="thead" class="thead-success"></thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+                <div class="resultado"></div>
+            </div>
+
+        </div>
+        <div id="calculadora" class="container tab-pane fade">
+            <div class="container ">
+                <div class="col calc-container">
+                    <div class="row alert alert-danger notificacao"></div>
+                    <div class="row">
+                        <input type="text" class="col visor" disabled>
+                    </div>
+                    <div class="row">
+                        <input type="submit" class=" btn btn-dark col botao" value="7">
+                        <input type="submit" class=" btn btn-dark col botao" value="8">
+                        <input type="submit" class=" btn btn-dark col botao" value="9">
+                        <input type="submit" class=" btn btn-dark col botao" value="*">
+                        <input type="submit" class=" btn btn-dark col botao" value="(">
+                    </div>                
+                     <div class="row">
+                        <input type="submit" class=" btn btn-dark col botao" value="4">
+                        <input type="submit" class=" btn btn-dark col botao" value="5">
+                        <input type="submit" class=" btn btn-dark col botao" value="6">
+                        <input type="submit" class=" btn btn-dark col botao" value="/">
+                        <input type="submit" class=" btn btn-dark col botao" value=")">
+                    </div>
+                     <div class="row">
+                        <input type="submit" class=" btn btn-dark col botao" value="1">
+                        <input type="submit" class=" btn btn-dark col botao" value="2">
+                        <input type="submit" class=" btn btn-dark col botao" value="3">
+                        <input type="submit" class=" btn btn-dark col botao" value="-">
+                        <input type="submit" class=" btn btn-dark col botaos" value="sqrt">
+                    </div>
+                    <div class="row">
+                        <input type="submit" class=" btn btn-dark col botao" value=".">
+                        <input type="submit" class=" btn btn-dark col botao" value="0">                        
+                        <input type="submit" class=" btn btn-warning col botaoi" value="=">  
+                        <input type="submit" class=" btn btn-dark col botao" value="+"> 
+                        <input type="submit" class=" btn btn-warning col botaoc" value="C">        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="sorteador" class="tab-pane fade">
+            <div class="container sort-container">                
+                <div class="col">
+                    <div class="row">
+                        <!-- <h2>Informe os valores que deseja jogar.</h2> -->
+                    </div>
+                   
+                    <div class="form-group">
+                        <div class="col">
+                            <div class="row">
+                                <input type="text" class="col form-control valores">
+                                <input type="text" class="col form-control valores">
+                                <input type="text" class="col form-control valores">
+                                <input type="text" class="col form-control valores">
+                                <input type="text" class="col form-control valores">
+                                <input type="text" class="col form-control valores">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group sorteados">
+                        <div class="col">
+                            <div class="row">                            
+                                <input type="text" class="col form-control val_sorteado" disabled>
+                                <input type="text" class="col form-control val_sorteado" disabled>
+                                <input type="text" class="col form-control val_sorteado" disabled>
+                                <input type="text" class="col form-control val_sorteado" disabled>
+                                <input type="text" class="col form-control val_sorteado" disabled>
+                                <input type="text" class="col form-control val_sorteado" disabled>
+                            </div>
+                        </div>
+                    </div>              
+                    <div class="col">
+                        <div class="row form-group btn-sorteio">
+                            <button class="jogar btn btn-dark form-control col"><span class="spinner-grow spinner-grow-sm text-warning"></span> Jogar</button>
+                            <button class="novo_jogo btn btn-dark form-control col"><span class="spinner-grow spinner-grow-sm text-primary"></span> Novo Jogo</button>
+                            <button class="sortear btn btn-dark form-control col"><span class="spinner-grow spinner-grow-sm text-success"></span> Sortear</button>
+                        </div> 
+                    </div>              
+                </div>
+            </div>
+        </div>
+        
+        <div id="about" class="container tab-pane fade">
+            <div class="row">
+               <div id="im" class="col text-center">
+                    <img src="https://img.icons8.com/bubbles/100/000000/student-male.png">
+                    <p>Aluno do curso Bacharelado em Sistemas de Informação no Instituto Federal de Educação, Ciência e Tecnologia do Ceará.</p>
+               </div>
+                <div id="im" class="col text-center">
+                     <img src="https://img.icons8.com/bubbles/100/000000/search.png">
+                     <p>Bolsista de Iniciação Ciênctífica no Laboratory Of Embedded And Distributed Systems - LEDS.</p>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div id="im" class="col text-center">
+                    <img src="https://img.icons8.com/bubbles/100/000000/source-code.png">
+                    <p>Trabalho desenvolvido para a disciplina de Projeto de Sistemas Web I, ministrada pelo Prof. Harley Macêdo.</p>
+                </div>
+            </div>
+            <div class="row">
+                
+
+            </div>
+        </div>
+    </div> 
+    <div class="container rodape text-center">
+        <div class="row">
+            <div class="col">
+                <p>Samuel Mendes</p>
+            </div>
+            <div class="col">
+                <p>Projeto de Sistemas Web</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
